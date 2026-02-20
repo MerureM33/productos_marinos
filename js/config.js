@@ -1,6 +1,6 @@
 const CONFIG = {
     whatsapp: {
-        number: "51935906775",
+        number: "51976318016",
         message: "Hola, quiero información sobre sus productos."
     }
 };
