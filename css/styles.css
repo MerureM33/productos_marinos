@@ -145,18 +145,24 @@ body {
 
 /* ENVÍO */
 .envio {
+    
     max-width: 500px;
-    margin-top: 30px;
+    width: 100%;
+    display: block;
+    margin: 30px auto 0 auto;
     border-radius: 20px;
+
 }
 
-/* MAPA RESPONSIVE */
 .map-responsive {
     position: relative;
-    padding-bottom: 56.25%;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
+    margin: 40px auto 0 auto;
+    border-radius: 15px;
     overflow: hidden;
-    margin-top: 30px;
 }
 
 .map-responsive iframe {
@@ -167,7 +173,10 @@ body {
     height: 100%;
     border: 0;
 }
-
+.full-map {
+    width: 100%;
+    max-width: 100%;
+}
 /* FOOTER */
 .footer {
     background: #111;
