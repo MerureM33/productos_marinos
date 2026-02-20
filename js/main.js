@@ -17,10 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const number = CONFIG.whatsapp.number;
     const message = encodeURIComponent(CONFIG.whatsapp.message);
-    const url = `https://wa.me/${number}?text=${message}`;
 
-    document.getElementById("btn-whatsapp").href = url;
-    document.getElementById("float-whatsapp").href = url;
+    // Detectar si es dispositivo móvil
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    let url;
+
+    if (isMobile) {
+        // En móviles abre la app directamente
+        url = `https://wa.me/${number}?text=${message}`;
+    } else {
+        // En PC abre WhatsApp Web
+        url = `https://web.whatsapp.com/send?phone=${number}&text=${message}`;
+    }
+
+    const btnWhatsapp = document.getElementById("btn-whatsapp");
+    const floatWhatsapp = document.getElementById("float-whatsapp");
+
+    if (btnWhatsapp) btnWhatsapp.href = url;
+    if (floatWhatsapp) floatWhatsapp.href = url;
 
 });
 
